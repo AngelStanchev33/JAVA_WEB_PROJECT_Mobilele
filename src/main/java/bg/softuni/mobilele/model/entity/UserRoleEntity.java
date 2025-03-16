@@ -10,12 +10,13 @@ import java.util.List;
 public class UserRoleEntity extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private UserRoleEnum userRole;
-    @OneToMany(mappedBy = "role",
-            fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "role", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<UserEntity> users;
 
+    // Getters & Setters
     public UserRoleEnum getUserRole() {
         return userRole;
     }
@@ -30,5 +31,13 @@ public class UserRoleEntity extends BaseEntity {
 
     public void setUsers(List<UserEntity> users) {
         this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRoleEntity{" +
+                "userRole=" + userRole +
+                ", users=" + users +
+                '}';
     }
 }

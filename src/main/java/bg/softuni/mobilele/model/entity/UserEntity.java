@@ -2,23 +2,32 @@ package bg.softuni.mobilele.model.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
+
     @Column(nullable = false, unique = true)
     private String email;
+
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
+    @Column(nullable = false)
     private boolean isActive;
+
     private String imageUrl;
+
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private UserRoleEntity role;
 
+    // Getters & Setters
     public String getEmail() {
         return email;
     }

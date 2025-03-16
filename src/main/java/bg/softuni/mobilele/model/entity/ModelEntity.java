@@ -9,16 +9,21 @@ public class ModelEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CategoryEnum category;
+
     @Column(nullable = false)
     private String imageUrl;
+
     private int startYear;
     private Long endYear;
+
     @ManyToOne
     private BrandEntity brandEntity;
 
+    // Getters & Setters
     public String getName() {
         return name;
     }

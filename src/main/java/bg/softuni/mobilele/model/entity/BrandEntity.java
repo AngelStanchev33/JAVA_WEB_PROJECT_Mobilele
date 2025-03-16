@@ -1,7 +1,6 @@
 package bg.softuni.mobilele.model.entity;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +10,11 @@ public class BrandEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String name;
-    @OneToMany(mappedBy = "brandEntity",
-            fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "brandEntity", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ModelEntity> models = new ArrayList<>();
 
+    // Getters & Setters
     public String getName() {
         return name;
     }
