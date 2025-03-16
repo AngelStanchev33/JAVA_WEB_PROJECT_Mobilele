@@ -5,7 +5,6 @@ import bg.softuni.mobilele.model.entity.enums.TransmissionEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "offers")
@@ -14,19 +13,36 @@ public class OfferEntity extends BaseEntity {
     @Lob
     @Column(columnDefinition = "TEXT")
     private String description;
+
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private EngineEnum engine;
+
+    @Column(nullable = false)
     private String imageUrl;
-    private int mileage;
+
+    @Column(nullable = false)
+    private Integer mileage;
+
+    @Column(nullable = false)
     private BigDecimal price;
+
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private TransmissionEnum transmission;
-    private int year;
+
+    @Column(nullable = false)
+    private Integer year;
+
     @ManyToOne
+    @JoinColumn(name = "model_id", nullable = false)
     private ModelEntity model;
+
     @ManyToOne
+    @JoinColumn(name = "seller_id", nullable = false)
     private UserEntity seller;
 
+    // Getters & Setters
     public String getDescription() {
         return description;
     }
@@ -75,11 +91,11 @@ public class OfferEntity extends BaseEntity {
         this.transmission = transmission;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 

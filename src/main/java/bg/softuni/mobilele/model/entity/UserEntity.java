@@ -7,14 +7,16 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
-
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false)
     private String password;
     private String firstName;
     private String lastName;
     private boolean isActive;
     private String imageUrl;
     @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
     private UserRoleEntity role;
 
     public String getEmail() {
