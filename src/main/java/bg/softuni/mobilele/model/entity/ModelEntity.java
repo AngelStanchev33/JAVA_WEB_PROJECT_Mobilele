@@ -23,53 +23,58 @@ public class ModelEntity extends BaseEntity {
     @ManyToOne
     private BrandEntity brandEntity;
 
-    // Getters & Setters
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public ModelEntity setName(String name) {
         this.name = name;
+        return this;
     }
 
     public CategoryEnum getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryEnum category) {
+    public ModelEntity setCategory(CategoryEnum category) {
         this.category = category;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public ModelEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(int startYear) {
+    public ModelEntity setStartYear(int startYear) {
         this.startYear = startYear;
+        return this;
     }
 
     public Long getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(Long endYear) {
+    public ModelEntity setEndYear(Long endYear) {
         this.endYear = endYear;
+        return this;
     }
 
     public BrandEntity getBrandEntity() {
         return brandEntity;
     }
 
-    public void setBrandEntity(BrandEntity brandEntity) {
+    public ModelEntity setBrandEntity(BrandEntity brandEntity) {
         this.brandEntity = brandEntity;
+        return this;
     }
 
     @Override

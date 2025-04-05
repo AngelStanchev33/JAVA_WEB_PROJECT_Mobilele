@@ -17,6 +17,8 @@ public class UserEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String lastName;
+    @Column(nullable = false)
+    private String username;
 
     @Column(nullable = false)
     private boolean isActive;
@@ -58,6 +60,14 @@ public class UserEntity extends BaseEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public boolean isActive() {
