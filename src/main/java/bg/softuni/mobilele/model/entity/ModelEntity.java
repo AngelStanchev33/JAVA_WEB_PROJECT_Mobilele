@@ -21,6 +21,7 @@ public class ModelEntity extends BaseEntity {
     private Long endYear;
 
     @ManyToOne
+    @JoinColumn(name = "brand_id")
     private BrandEntity brandEntity;
 
     public String getName() {

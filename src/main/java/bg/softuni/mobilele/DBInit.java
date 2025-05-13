@@ -19,11 +19,11 @@ public class DBInit implements CommandLineRunner {
     private final BrandRepository brandRepository;
     private final ModelRepository modelRepository;
     private final OfferRepository offerRepository;
-    private final RolesRepository repository;
+    private final RoleRepository repository;
     private final UserRepository userRepository;
     private  final PasswordEncoder passwordEncoder;
 
-    public DBInit(BrandRepository brandRepository, ModelRepository modelRepository, OfferRepository offerRepository, RolesRepository repository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public DBInit(BrandRepository brandRepository, ModelRepository modelRepository, OfferRepository offerRepository, RoleRepository repository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.brandRepository = brandRepository;
         this.modelRepository = modelRepository;
         this.offerRepository = offerRepository;
@@ -56,6 +56,7 @@ public class DBInit implements CommandLineRunner {
         model.setBrandEntity(brandEntity);
         model.setCategory(CategoryEnum.CAR);
         model.setStartYear(2006);
+        model.setEndYear(2009L);
         model.setImageUrl("https://www.topgear.com/sites/default/files/news-listicle/image/g17p6682.jpg");
 
         modelRepository.save(model);
